@@ -1,0 +1,64 @@
+Neural Networks (NN) vs Convolutional Neural Networks (CNN)
+
+1. In a Neural Network (NN)
+   - Each neuron has weights (w1, w2, ..., wn) and a bias (b).
+   - The weights determine how much each input contributes to the output.
+   - The goal during training is to find the best possible set of weights and biases that minimize the prediction error (loss).
+
+   This is done using backpropagation and gradient descent — iteratively updating weights to improve accuracy.
+
+    In summary: In NN, we learn the optimal weights and biases for connections between neurons.
+
+2. In a Convolutional Neural Network (CNN)
+   - CNNs are a specialized type of NN designed for image data (or other structured data).
+   - Instead of fully connected layers, CNNs use convolutional layers with small filters (kernels), such as 3×3 or 5×5 matrices.
+   - Each kernel slides over the image and detects spatial features like edges, textures, or patterns.
+
+   The goal is to learn the best possible kernel (filter) weights and biases that extract meaningful patterns automatically.
+
+    In summary: In CNN, we learn the optimal kernel (filter) weights and biases that best detect important visual features.
+
+3. Comparison
+
+   Model | Learns | Meaning
+   -------|--------|---------
+   NN | Weights & biases | Determine how strongly each input affects the next neuron
+   CNN | Kernel weights & biases | Determine which visual patterns (edges, textures, shapes) to detect
+
+4. Intuitive Summary
+   - Neural Networks learn abstract relationships between input and output data.
+   - Convolutional Neural Networks learn visual filters that capture spatial patterns in data.
+
+Both models are learning parameters (weights), but CNNs are structured to work efficiently with spatially correlated data such as images.
+
+
+Steps:: 
+1. Preprocess the Images
+
+Convert input images to grayscale.
+
+Normalize lighting and contrast to handle illumination variations.
+
+Resize images to a fixed dimension to ensure uniformity across training samples.
+
+2. Extract Haar-like Features
+
+Use rectangular filters to measure intensity differences between adjacent regions (edges, lines, textures).
+
+These features mimic how human vision detects contrast and patterns.
+
+3. Select Relevant Features (Feature Selection)
+
+Apply AdaBoost to select the most discriminative Haar features.
+
+Only the most important features are kept, reducing computation and improving detection accuracy.
+
+4. Train the Classifier in Stages (Cascading)
+
+Train a cascade of classifiers—each stage filters out non-object regions.
+
+Early stages reject obvious negatives quickly.
+
+Later stages perform more detailed analysis to confirm true positives.
+
+This structure makes the method fast and efficient for real-time object detection.

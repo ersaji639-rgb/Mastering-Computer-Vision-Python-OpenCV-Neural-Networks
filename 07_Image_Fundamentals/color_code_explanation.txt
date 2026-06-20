@@ -1,0 +1,31 @@
+Why color code from 0 to 255 is related to 8-bit representation
+
+The range 0 to 255 is directly related to 8-bit representation. Here’s why:
+
+1. Bit Representation
+   - A bit can be either 0 or 1.
+   - With 8 bits, you can represent 2^8 = 256 different combinations.
+
+2. Range
+   - Those 256 possible values are usually mapped as 0 → 255 (that’s 256 total values).
+     * 0 → minimum intensity (e.g., black or no color)
+     * 255 → maximum intensity (e.g., full red, green, or blue)
+
+3. RGB Color Model
+   Each pixel’s color is usually represented by three 8-bit values:
+   - Red: 0–255
+   - Green: 0–255
+   - Blue: 0–255
+
+   So, a color pixel can be described as (R, G, B) — for example, (255, 0, 0) = pure red.
+
+   Since each channel has 256 possibilities:
+   256^3 = 16,777,216
+   That’s how we get about 16.7 million colors in standard 24-bit color images.
+
+4. Summary
+
+   Property | Bits | Range | Meaning
+   ----------|------|--------|----------
+   1 channel (grayscale or single color) | 8-bit | 0–255 | 256 shades
+   RGB color | 24-bit (8×3) | (0–255,0–255,0–255) | ~16.7 million colors
