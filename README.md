@@ -51,4 +51,4 @@ This work was completed as part of the **Mastering Computer Vision with Python, 
 
 **Saji M**
 Ph.D. Research Scholar
-Indian Institute of Technology Madras
+Indian Institute of Science Bangalore
